@@ -1,0 +1,212 @@
+\documentclass[a4paper,13pt]{article} 
+\usepackage[T2A]{fontenc}			
+\usepackage[utf8]{inputenc}			
+\usepackage[english,russian]{babel}	
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathrsfs,mathtools} 
+\usepackage{cancel}
+\usepackage{multirow}
+\usepackage[colorlinks, linkcolor = blue]{hyperref}
+\usepackage{upgreek}\usepackage[left=2cm,right=2cm,top=2cm,bottom=3cm,bindingoffset=0cm]{geometry}
+\usepackage{graphicx,wrapfig,subfig}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{csvsimple}
+
+
+\graphicspath{ {images/} }
+\usepackage{multicol}
+\setlength{\columnsep}{2cm}
+
+
+\begin{document}
+
+\begin{titlepage}
+	\centering
+	\vspace{5cm}
+	{\scshape\LARGE Московский физико-технический институт \par}
+	\vspace{4cm}
+	{\scshape\Large Лабораторная работа 3.4.2 \par}
+	\vspace{1cm}
+	{\huge\bfseries Закон Кюри-Вейсса \par}
+	\vspace{1cm}
+	\vfill
+\begin{flushright}
+	{\large выполнила студентка группы Б01-007}\par
+	\vspace{0.3cm}
+	{\LARGE Миндиярова Рената}
+\end{flushright}
+	
+
+	\vfill
+
+% Bottom of the page
+	Долгопрудный, 2021 г.
+\end{titlepage}
+
+
+\section{Введение}
+\textbf{Цель работы} : Изучение температурной зависимости магнитной восприимчивости ферромагнетика выше точки Кюри.
+
+
+\textbf{В работе используются}: катушка с образцом из гадолиния, термостат, частотомер, цифровой вольтметр, LC-автогенератор, термопара медь-константан.
+
+
+Для ферромагнетиков справедлив закон \textit{Кюри-Вейсса}:
+	
+	\begin{equation}
+		\chi \sim \frac{1}{T - \Theta_{p}}
+	\end{equation}
+	
+	где $\Theta_{p}$ -- температура, близкая к температуре Кюри.\\
+	
+	\begin{wrapfigure}[10]{r}{0.23\textwidth}
+		\vspace{-1.5cm}
+		\centering
+		\includegraphics[width = 0.2\textwidth]{photofor342.jpg}
+		\caption{График зависимости $\frac{1}{\chi}\left(T\right)$}
+		\label{fig:photofor342}
+	\end{wrapfigure}
+	
+	Данный закон хорошо работает в диапазоне температур:\\ $T \gg \Theta_{p}$. Для температур, близких к температуре Кюри вводят две величины:
+	
+	Собственно саму температуру Кюри (ферромагнитную) -- $\Theta$, и 
+	
+	Парамагнитную температуру Кюри -- $\Theta_{p}$.\\ В таком случае график зависимости величины, обратной магнитной восприимчивости образца изображен на рисунке (\ref{fig:graph_return_chi_for_temp}).
+	
+	Закон Кюри-Вейсса можно считать справедливым, если выполняется соотношение: 
+	
+	\begin{equation}
+		\frac{1}{\chi} \sim \frac{1}{\tau^{2} - \tau^{2}_{0}} \sim \left(T - \Theta_{p}\right)
+	\end{equation}
+	\section{Параметры установки}
+	
+	\begin{figure}[h!]
+		\begin{center}
+			\includegraphics[width = 0.8\textwidth]{photo3421.pdf}
+			\label{fig:schem_of_facility}
+			\caption{Схема установки. 1 - Катушка индуктивности с образцом из гадолиния, 2 - сосуд с трансформаторным маслом, 3 - вода, нагреваемая термостатом, 4 - ртутный термометр, 5 - блок термостата, 6 - термопара}
+		\end{center}
+	\end{figure}
+	
+
+\section{Ход выполнения работы}
+Запишем данные с установки:
+Запишем данные установки: $ k= 24 $ град/мВ, $ \tau_0 = 6,9092 $ мкс. Так как нам нужно, чтобы разница была не более половины градуса, то мы вычисляем максимальное напряжение, при котором допустимо измерение:
+
+\begin{equation}
+U = \frac{T}{k} = \frac{0,5}{24}  \approx 0,02
+\end{equation}
+
+Теперь снимем показания вольтметра и частометра при температуре термостата равной 14 $ ^\circ C $, и проведем такой опыт при 14 разных температурах, повышая после каждого измерения температуру термостата на два градуса. При этом температуру образца будем считать по следующей формуле:
+
+\begin{equation}\label{}
+T_o = T + \varDelta U \cdot k
+\end{equation}
+
+Результаты занесем в таблицу 1.
+
+\begin{table}[]
+    \centering
+    \caption{Таблица значений}
+    \begin{tabular}{|l|l|l|l|l|}
+        \hline
+    $ T $, $ ^\circ C $ &  $ \varDelta  U $, мВ & $ T $, $ ^\circ C$ & $ \tau, $ мкс &  $ \dfrac{1}{\tau^{2} - \tau_0^{2}} $, $ mcs^{-2} $   \\ \hline
+    14,04 & -0,018 & 13,608 & 7,949 & 0,0647   \\ \hline
+    16,1  & -0,016 & 15,716 & 7,883 & 0,0694   \\ \hline
+    18,1  & -0,017 & 17,692 & 7,776 & 0,0785   \\ \hline
+    20,09 & -0,018 & 19,658 & 7,606 & 0,0988  \\ \hline
+    22,07 & -0,02  & 21,59  & 7,415 & 0,138    \\ \hline
+    24,07 & -0,018 & 23,638 & 7,23  & 0,2204   \\ \hline
+    26,08 & -0,018 & 25,648 & 7,15  & 0,2953   \\ \hline
+    28,07 & -0,018 & 27,638 & 7,108 & 0,3588   \\ \hline
+    30,06 & -0,019 & 29,604 & 7,081 & 0,416    \\ \hline
+    32,07 & -0,016 & 31,686 & 7,061 & 0,4715   \\ \hline
+    34,07 & -0,019 & 33,614 & 7,048 & 0,5161   \\ \hline
+    36,05 & -0,016 & 35,666 & 7,037 & 0,561    \\ \hline
+    38,05 & -0,018 & 37,618 & 7,029 & 0,5988   \\ \hline
+    40,04 & -0,018 & 39,608 & 7,023 & 0,6307   \\ \hline
+    \end{tabular}
+    \end{table}
+	\begin{wraptable}{l}{0.5\linewidth}
+		\caption{Погрешности}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			\text{№} & $ \sigma_{T}  $ & $  \sigma_{\tau^{2} - \tau_0^{2}} $ $,  мкс^{2}  $ &  $ \sigma_{\frac{1}{\tau^2 - \tau_0^2}} $, $ мкс^{-2}  $ \\
+			\hline
+			1. & 0.10 & 0.159 & 0.001 \\
+			2. & 0.10 & 0.157 & 0.001 \\
+			3. & 0.10 & 0.155 & 0.001 \\
+			4. & 0.10 & 0.151 & 0.002 \\
+			5. & 0.10 & 0.147 & 0.004 \\
+			6. & 0.10 & 0.144 & 0.013 \\
+			7. & 0.10 & 0.142 & 0.027 \\
+			8. & 0.10 & 0.142 & 0.048 \\
+			9. & 0.10 & 0.141 & 0.074 \\
+			10. & 0.10 & 0.141 & 0.113 \\
+			11. & 0.10 & 0.14 & 0.13 \\
+			12. & 0.10 & 0.14 & 0.152 \\
+			13. & 0.10 & 0.14 & 0.185 \\
+			14. & 0.10 & 0.14 & 0.211 \\
+			\hline
+		\end{tabular}
+	\end{wraptable}
+	Посчитаем погрешности: 
+	
+	$$
+	\sigma_{T_o} = \sqrt{\sigma_{T}^2 + \sigma_{dUk}^2}
+	$$
+	\begin{equation}\label{}
+	\sigma_{\tau^2 - \tau_0^2} = \dfrac{d(\tau^2 - \tau_0^2)}{d\tau}\sigma_\tau = 2\tau\sigma_\tau
+	\end{equation}
+	\begin{equation}\label{}
+	\sigma_{\frac{1}{\tau^2 - \tau_0^2}} = \dfrac{\dfrac{1}{\tau^2 - \tau_0^2}}{d\tau}\sigma_\tau = \dfrac{2\tau}{{(\tau^2 - \tau_0^2)^2}}\sigma_\tau
+	\end{equation}
+	
+	По результатам вычисления погрешностей составим таблицу 2.
+   
+    
+   
+На основе таблицы 1 построим графики зависимости величин $ \tau^{2} - \tau_0^{2} $ и $ \dfrac{1}{\tau^2 - \tau_0^2} $ от температуры образца.
+\par
+На графике рис. 3 проведем прямую через последние 9 точек и аппроксимируем ее к оси абсцисс. Результаты занесем в таблицу 3.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\linewidth]{342graf.pdf}
+	\caption{Зависимость $ \dfrac{1}{ \tau^2 - \tau_0^2} $ от температуры образца}
+	\label{C}
+\end{figure}
+Коэффициенты прямой и погрешности посчитаем по МНК
+\begin{table}%{l}{0.5\linewidth}
+	\centering
+	\caption{Расчет апроксимированной прямой $ y = ax +b $}
+	\begin{tabular}{|c|c|c|}
+        \hline
+		\text{} & \text{Коэффициенты} & \text{Погрешности} \\\hline
+		b & -0,409 & 0.041  \\\hline
+		a & 0.027 & 0.001  \\
+        \hline
+	\end{tabular}
+\end{table}
+По результатам таблицы 3 получаем прямую 
+
+\begin{equation}\label{}
+ \dfrac{1}{\tau^{2} - \tau_0^{2}} = 0,027 \cdot T_o - 0,409
+\end{equation}
+
+При 0 по оси ординат парамагнитная температура Кюри $ \Theta_p = \dfrac{0,409}{0,027} \approx 15,15 \; ^\circ C$. Погрешность полученной величины
+
+\begin{equation}\label{}
+\sigma_{\Theta_p} = \Theta_p \sqrt{{\dfrac{\sigma_a}{a}^{2}} + {{\dfrac{\sigma_b}{b}}}^{2}} = 1,62^\circ C
+\end{equation}
+\section{Вывод}
+
+По результатам проделанной работы мы высчитали парамагнитную точку Кюри для гадолиния:
+
+\begin{center}
+	{\fbox{ $ \Theta_p = (15,15 \pm 1,62) \; ^\circ C$}} \\
+\end{center} 
+
+
+Полученный результат достаточно хорошо согласуется с табличными данными, где точка Кюри гадолиния $ \Theta = 16  ^\circ C $.
+
+\end{document}
